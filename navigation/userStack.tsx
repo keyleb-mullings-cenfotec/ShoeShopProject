@@ -15,8 +15,28 @@ import MessagesScreen from "../screens/MessagesScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import AboutScreen from "../screens/AboutScreen";
 import CustomDrawer from "../components/CustomDrawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ItemDetailScreen from "../screens/ItemDetailScreen";
 
 const Drawer = createDrawerNavigator();
+const HomeStackNavigator = createNativeStackNavigator();
+
+function MyStack() {
+  return (
+    <HomeStackNavigator.Navigator initialRouteName="HomeScreen">
+      <HomeStackNavigator.Screen
+        name="Items Screen"
+        component={ItemsScreen}
+        options={{ headerBackTitleVisible: false }}
+      />
+      <HomeStackNavigator.Screen
+        name="Item Detail Screen"
+        component={ItemDetailScreen}
+        options={{ headerBackTitleVisible: true }}
+      />
+    </HomeStackNavigator.Navigator>
+  );
+}
 
 export default function UserStack() {
     return (
@@ -30,7 +50,7 @@ export default function UserStack() {
                             <Ionicons name="home-outline" size={22} color={color} />
                         )
                     }} />
-                <Drawer.Screen name="Items" component={ItemsScreen} options={{
+                <Drawer.Screen name="Items" component={MyStack} options={{
                     drawerIcon: ({ color }) => (
                         <Ionicons name="pricetags-outline" size={22} color={color} />
                     )
