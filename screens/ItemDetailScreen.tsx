@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { useNavigationParam } from "react-navigation-hooks";
+// import { useNavigationParam } from "react-navigation-hooks";
 
 const ItemDetailsScreen = () => {
   const navigation = useNavigation();
-  const name = useNavigationParam("name");
+  //   const name = useNavigationParam("name");
 
   const shoesOne = [
     {
