@@ -39,14 +39,14 @@ const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
                     placeholder="Email"
                     containerStyle={styles.control}
                     value={value.email}
-                    onChangeText={(text) => setValue({ ...value, email: text })}
+                    onChangeText={(text:string) => setValue({ ...value, email: text })}
                     leftIcon={<Icon name='envelope' size={16} />}
                 />
                 <Input
                     placeholder="Password"
                     containerStyle={styles.control}
                     value={value.password}
-                    onChangeText={(text) => setValue({ ...value, password: text })}
+                    onChangeText={(text:string) => setValue({ ...value, password: text })}
                     leftIcon={<Icon name='key' size={16} />}
                     secureTextEntry={true}
                 />
