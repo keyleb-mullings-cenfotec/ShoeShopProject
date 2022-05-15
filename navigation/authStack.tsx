@@ -6,6 +6,10 @@ import WelcomeScreen from "../screens/WelcomeScreen";
 import SignInScreen from "../screens/SignInScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 
+type RootStackParamList = {
+    ItemDetailScreen: { item: string };
+};
+
 const Stack = createStackNavigator();
 
 export default function AuthStack() {

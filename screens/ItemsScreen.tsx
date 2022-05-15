@@ -10,6 +10,13 @@ import {
 import { StackScreenProps } from "@react-navigation/stack";
 import React from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import database from '@react-native-firebase/database';
+
+// database()
+//   .ref('/data/itemsList1')
+//   .on('value', snapshot => {
+//     console.log('data: ', snapshot.val());
+//   });
 
 const ItemsScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 // const ItemsScreen = () => {
@@ -17,14 +24,14 @@ const ItemsScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   
   const shoesOne = [
     {
-      id: "1",
+      id: 1,
       name: "Shoe One",
       imagePath: require("../src/images/shoeOne.jpeg"),
       model: "Nike",
       price: 150
     },
     {
-      id: "2",
+      id: 2,
       name: "Shoe Two",
       imagePath: require("../src/images/shoeTwo.jpeg"),
       model: "Nike",
@@ -34,14 +41,14 @@ const ItemsScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 
   const shoesTwo = [
     {
-      id: "3",
+      id: 3,
       name: "Shoe Three",
       imagePath: require("../src/images/shoeThree.jpeg"),
       model: "Nike",
       price: 175
     },
     {
-      id: "4",
+      id: 4,
       name: "Shoe Four",
       imagePath: require("../src/images/shoeFour.jpeg"),
       model: "Nike",

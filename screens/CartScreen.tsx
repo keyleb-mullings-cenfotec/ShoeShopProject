@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet, Text, View, TouchableOpacity, FlatList, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
@@ -39,7 +39,17 @@ const shoesTwo = [
     },
 ];
 
-const CartScreen = () => {
+const CartScreen = ({ navigation, route }) => {
+
+    // const itemsList = route.params.selectedItems;
+    
+    // console.log('Cart: ' + itemsList)
+    console.log('Route: ', route.params.selectedItems)
+    console.log('Nav: ', navigation)
+    // useEffect(()=>{
+    // if (itemsList) {
+    // }
+//   })
     return (
         <View style={{ flex: 1, flexDirection: "row" }}>
             <View

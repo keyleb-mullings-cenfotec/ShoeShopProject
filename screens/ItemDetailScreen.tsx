@@ -6,21 +6,27 @@ import {
   TouchableOpacity,
   FlatList,
   Dimensions,
+  Alert,
 } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 import React, { useState, useEffect, useRef } from "react";
 import { Route, RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 // import { useNavigationParam } from "react-navigation-hooks";
 
-// const ItemDetailsScreen: React.FC<StackScreenProps<route: RouteProp:any { params: { item: any } }, 'params' >>> = ({ route, navigation }) => {
-  const ItemDetailsScreen = ({navigation, route}) => {
-    useEffect(()=>{
-      if (route.params) {
-        console.log(route.params)
-      }
-    })
+// const ItemDetailsScreen: React.FC<StackScreenProps<{route: RouteProp<>}>> = ({ route, navigation }) => {
 
-    let item = route.params.item;
+// let selectedItems = [];
+const selectedItems: Array<any> = [];
+// const ItemDetailsScreen: React.FC<StackScreenProps<any>> = ({ navigation, route }) => {
+const ItemDetailsScreen = ({ navigation, route }) => {
+  // useEffect(()=>{
+  //   if (route.params) {
+  //     console.log(route.params)
+  //   }
+  // })
+
+  let item = route.params.item;
+
   // const ItemDetailsScreen = () => {
   // const navigation = useNavigation();
   //   const name = useNavigationParam("name");
@@ -195,22 +201,21 @@ import { Route, RouteProp, useNavigation, useRoute } from "@react-navigation/nat
           }}
         >
           <Text
-            style={{
-              color: "white",
-              textAlign: "center",
-              padding: 15,
-            }}
+            style={{ color: "white", textAlign: "center", padding: 15 }}
             onPress={() => {
               for (let i = 0; i < numbers.length; i++) {
                 if (numbers[i].value === true) {
                   item.size = numbers[i].id;
                 }
-                
+
               }
+              selectedItems.push(selectedItems);
               console.log(item);
+              console.log('Selected Items: ', selectedItems);
+              Alert.alert(item.name + ' has been added to cart.');
               // let selectedItems = []
 
-              // navigation.navigate("Cart Screen", {item});
+              navigation.navigate("Cart Screen", { selectedItems });
 
             }}
           >
