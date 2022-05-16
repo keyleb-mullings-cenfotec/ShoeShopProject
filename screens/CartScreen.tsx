@@ -127,14 +127,15 @@ const styles = StyleSheet.create({
         borderColor: "#D0CFCF",
         backgroundColor: "#ECEAEB",
         margin: "5%",
-        // alignItems: "center",
+        alignItems: "center",
         flexDirection: "row",
-        justifyContent: "flex-end"
+        // justifyContent: "flex-end",
+        // alignItems:'center'
 
     },
     itemsImage: {
-        width: Dimensions.get("window").width - 0.65 * Dimensions.get("window").width,
-        height: Dimensions.get("window").width - 0.6 * Dimensions.get("window").width,
+        width: Dimensions.get("window").width - 0.100 * Dimensions.get("window").width,
+        height: Dimensions.get("window").width - 0.8 * Dimensions.get("window").width,
         resizeMode: "contain",
     }
 });
